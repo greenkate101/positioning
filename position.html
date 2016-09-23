@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.example {
+			height: 50vh;
+			background-color: #eee;
+		}
+
+		.box {
+			background-color: blue;
+			width: 70px;
+			height: 70px;
+		}
+		#relative .box:first-child {
+			position: relative;
+			background-color: red;
+			/*now that the element is positioned we can use top,right,bottom and left*/
+			bottom: 35px;
+			right: 35px;
+			z-index: 1;
+		}
+		#relative .box:nth-child(2) {
+			position: relative;
+			background: green;
+			top: -50px;
+			left: -50px;
+			z-index: 2;
+		}
+		#absolute {
+			position: relative;
+		}
+			#absolute .box:first-child {
+				position: absolute;
+				background-color: pink;
+				top: 0px;
+				right: 0px;
+				z-index: 1;
+			}
+
+			#absolute .box:nth-child(2) {
+			position: absolute;
+			background-color: orange;
+			top: 0px;
+			right: 0px;
+		}
+		#fixed {
+			position: fixed;
+			bottom:0;
+			right: 0;
+			width: auto;
+			height: auto;
+			top: 0;
+			left: 50%;
+			background-color: rgba(0,0,0,0.7);
+			z-index: 9999;
+		}
+	</style>
+</head>
+<body>
+<h2>postion:static</h2>
+<div id="static" class="example">
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<h2>postion:relative</h2>
+<div id="relative" class="example">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<h2>postion:absolute</h2>
+<div id="absolute" class="example">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+<h2>postion:fixed</h2>
+<div id="fixed" class="box">
+</div>
+</body>
+</html>
